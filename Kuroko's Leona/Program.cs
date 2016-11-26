@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Kuroko_s_Leona.Champions;
+using LeagueSharp;
 using LeagueSharp.Common;
 
 namespace Kuroko_s_Leona
@@ -16,7 +14,15 @@ namespace Kuroko_s_Leona
 
         private static void OnGameLoad(EventArgs args)
         {
-            throw new NotImplementedException();
+            if (ObjectManager.Player.ChampionName == "Leona")
+            {
+                new Leona();
+            }
+            else
+            {
+                Game.PrintChat(ObjectManager.Player.ChampionName + "NOT SUPPORTED");
+                return;
+            }
         }
     }
 }
